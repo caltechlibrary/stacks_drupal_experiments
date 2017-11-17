@@ -1,0 +1,5 @@
+name = Caltech Library Customizations
+core = 7.x
+package = Caltech Library
+
+configure = admin/config/caltechlibrary

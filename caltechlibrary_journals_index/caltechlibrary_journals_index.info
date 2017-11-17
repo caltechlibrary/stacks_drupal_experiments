@@ -1,0 +1,9 @@
+name = Caltech Library Journals Index
+description = Provides the Search API index for Journal entities.
+core = 7.x
+package = Caltech Library
+version = 7.x-1.0-beta2
+dependencies[] = entity
+dependencies[] = search_api
+features[features_api][] = api:2
+features[search_api_index][] = caltechlibrary_journals

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Caltech Library Journal Entity feature.
+ */
+
+include_once 'caltechlibrary_journal_entity.features.inc';

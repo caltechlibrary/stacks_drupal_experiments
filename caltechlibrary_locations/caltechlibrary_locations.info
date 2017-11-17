@@ -1,0 +1,17 @@
+name = Caltech Library Locations
+core = 7.x
+package = Caltech Library
+dependencies[] = ctools
+dependencies[] = feeds
+dependencies[] = feeds_ex
+dependencies[] = geofield_map
+dependencies[] = page_manager
+dependencies[] = views
+features[ctools][] = feeds:feeds_importer_default:1
+features[ctools][] = page_manager:pages_default:1
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[feeds_importer][] = libcal_locations
+features[page_manager_handlers][] = node_view__panel_context_6f7bd4be-b64c-4288-9f5e-c5f0c438452e
+features[views_view][] = hours_locations
+features[views_view][] = locations_sort

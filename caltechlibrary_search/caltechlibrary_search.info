@@ -1,0 +1,9 @@
+name = Caltech Library Search
+core = 7.x
+package = Caltech Library
+dependencies[] = block
+dependencies[] = context
+dependencies[] = ctools
+features[context][] = search
+features[ctools][] = context:context:3
+features[features_api][] = api:2

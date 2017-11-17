@@ -1,0 +1,5 @@
+name = Caltech Library Journal Entity
+description = Defines a custom Journal entity.
+core = 7.x
+package = Caltech Library
+dependencies[] = entity

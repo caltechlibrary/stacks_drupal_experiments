@@ -1,0 +1,97 @@
+<?php
+/**
+ * @file
+ * Install, update, and uninstall functions for caltechlibrary_journal.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function caltechlibrary_journal_schema() {
+  $schema['caltechlibrary_journal'] = array (
+    'description' => 'The base table for journal entities.',
+    'fields' => array(
+      'jid' => array(
+        'description' => 'The primary key for the journal table.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'unique_id' => array(
+        'description' => 'Unchanging ID based on Platform and KBID.',
+        'type' => 'varchar',
+        'length' => '255'
+      ),
+      'kbid' => array(
+        'description' => 'EBSCO-provided value.',
+        'type' => 'varchar',
+        'length' => '11'
+      ),
+      'title' => array(
+        'description' => 'The journal title.',
+        'type' => 'text',
+      ),
+      'alt_title' => array(
+        'description' => 'Alternate or previous titles for the journal.',
+        'type' => 'text',
+      ),
+      'platform' => array(
+        'description' => 'The platform on which the journal is available.',
+        'type' => 'varchar',
+        'length' => '255'
+      ),
+      'package' => array(
+        'description' => 'The package through which the journal was purchased.',
+        'type' => 'varchar',
+        'length' => '255'
+      ),
+      'url' => array(
+        'description' => 'The URL at which the journal can be accessed.',
+        'type' => 'text',
+      ),
+      'publisher' => array(
+        'description' => 'The journal publisher.',
+        'type' => 'varchar',
+        'length' => '255'
+      ),
+      'sn_print' => array(
+        'description' => 'ISSN or other serial number for the print edition.',
+        'type' => 'varchar',
+        'length' => '255'
+      ),
+      'sn_online' => array(
+        'description' => 'ISSN or other serial number for the online edition.',
+        'type' => 'varchar',
+        'length' => '255'
+      ),
+      'coverage_begin' => array(
+        'description' => 'String representing the date coverage begins.',
+        'type' => 'varchar',
+        'length' => '255'
+      ),
+      'coverage_end' => array(
+        'description' => 'String representing the date coverage ends.',
+        'type' => 'varchar',
+        'length' => '255'
+      ),
+      'coverage_note' => array(
+        'description' => 'Explanation of coverage.',
+        'type' => 'varchar',
+        'length' => '255'
+      ),
+      'description' => array(
+        'description' => 'A description of the journal.',
+        'type' => 'text',
+      ),
+      'keywords' => array(
+        'description' => 'Keywords for indexing purposes.',
+        'type' => 'text',
+      ),
+    ),
+    'primary key' => array('jid'),
+    'mysql_character_set' => 'utf8mb4',
+    'collation' => 'utf8mb4_unicode_ci',
+  );
+
+  return $schema;
+}

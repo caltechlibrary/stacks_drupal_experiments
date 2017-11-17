@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CaltechLibrary Software feature.
+ */
+
+include_once 'caltechlibrary_software.features.inc';

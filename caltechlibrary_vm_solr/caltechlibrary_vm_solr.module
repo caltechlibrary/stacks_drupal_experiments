@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Caltech Library VM Solr feature.
+ */
+
+include_once 'caltechlibrary_vm_solr.features.inc';

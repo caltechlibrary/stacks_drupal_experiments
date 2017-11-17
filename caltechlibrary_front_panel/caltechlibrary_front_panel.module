@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Caltech Library Front Panel feature.
+ */
+
+include_once 'caltechlibrary_front_panel.features.inc';

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Caltech Library Journals Index feature.
+ */
+
+include_once 'caltechlibrary_journals_index.features.inc';

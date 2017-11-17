@@ -1,0 +1,11 @@
+name = Caltech Library Journals View
+description = Provides the view for Journal entities.
+core = 7.x
+package = Caltech Library
+version = 7.x-1.0-alpha2
+dependencies[] = better_exposed_filters
+dependencies[] = ctools
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = journals

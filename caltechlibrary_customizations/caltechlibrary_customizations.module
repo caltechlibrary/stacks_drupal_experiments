@@ -1,0 +1,100 @@
+<?php
+
+/**
+ * @file
+ * caltechlibrary_customizations.module
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function caltechlibrary_customizations_menu() {
+  $pre = 'admin/config/caltechlibrary';
+  $items[$pre] = array(
+    'title' => 'Caltech Library',
+    'description' => 'Administer Caltech Library custom functionality.',
+    'position' => 'right',
+    'weight' => -8,
+    'page callback' => 'caltechlibrary_customizations_admin_menu_block_page',
+    'access arguments' => array('access administration pages'),
+    'file' => 'caltechlibrary_customizations.admin.inc',
+  );
+  $items[$pre . '/search'] = array(
+    'title' => 'Search',
+    'description' => 'Change search options.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('caltechlibrary_customizations_search_settings'),
+    'access arguments' => array('administer site configuration'),
+    'file' => 'caltechlibrary_customizations.admin.inc',
+    'weight' => -20,
+  );
+  // $items[$pre . '/add'] = array(
+  //   'title' => 'Add search page',
+  //   'description' => 'Add a new search page.',
+  //   'page callback' => 'drupal_get_form',
+  //   'page arguments' => array('search_api_page_admin_add'),
+  //   'access arguments' => array('administer search_api'),
+  //   'file' => 'search_api_page.admin.inc',
+  //   'type' => MENU_LOCAL_ACTION,
+  // );
+  // $items[$pre . '/%search_api_page'] = array(
+  //   'title' => 'Edit search page',
+  //   'description' => 'Configure or delete a search page.',
+  //   'page callback' => 'drupal_get_form',
+  //   'page arguments' => array('search_api_page_admin_edit', 5),
+  //   'access arguments' => array('administer search_api'),
+  //   'file' => 'search_api_page.admin.inc',
+  // );
+  // $items[$pre . '/%search_api_page/edit'] = array(
+  //   'title' => 'Edit search page',
+  //   'type' => MENU_DEFAULT_LOCAL_TASK,
+  //   'context' => MENU_CONTEXT_INLINE,
+  // );
+  return $items;
+}
+
+/**
+ * Implements hook_form_hf_basic_search_form_alter().
+ */
+function caltechlibrary_customizations_form_alter(&$form, &$form_state, $form_id) {
+  dsm($form);
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function caltechlibrary_customizations_block_info() {
+  $blocks['caltechauthors'] = array(
+    'info' => t('New in CaltechAUTHORS'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function caltechlibrary_customizations_block_view($delta = '') {
+  switch ($delta) {
+    case 'caltechauthors':
+      $block['subject'] = t('New in CaltechAUTHORS');
+      $block['content'] = caltechlibrary_customizations_block_contents($delta);
+      break;
+  }
+  return $block;
+}
+
+/**
+ * A module-defined block content function.
+ */
+function caltechlibrary_customizations_block_contents($delta) {
+  switch ($delta) {
+    case 'caltechauthors':
+      $content = array(
+        // @todo Create a configuration option to add a URL through the UI.
+        // @todo Create a configuration option to choose the number of articles
+        // for display and add the logic to output only that number of articles.
+        '#markup' => file_get_contents('https://library.caltech.edu/recently-published/index.include'),
+      );
+      return $content;
+  }
+}

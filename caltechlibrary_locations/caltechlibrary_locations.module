@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CaltechLibrary Locations feature.
+ */
+
+include_once 'caltechlibrary_locations.features.inc';

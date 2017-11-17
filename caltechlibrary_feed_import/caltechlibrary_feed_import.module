@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Caltech Library Feed Import feature.
+ */
+
+include_once 'caltechlibrary_feed_import.features.inc';

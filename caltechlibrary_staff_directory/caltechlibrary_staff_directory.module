@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Caltech Library Staff Directory feature.
+ */
+
+include_once 'caltechlibrary_staff_directory.features.inc';

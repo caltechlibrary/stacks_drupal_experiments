@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CaltechLibrary Landing feature.
+ */
+
+include_once 'caltechlibrary_landing.features.inc';

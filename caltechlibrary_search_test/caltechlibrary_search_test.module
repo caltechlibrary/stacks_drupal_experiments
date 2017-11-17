@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Caltech Library Search TEST feature.
+ */
+
+include_once 'caltechlibrary_search_test.features.inc';

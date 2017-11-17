@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Caltech Library Journals View feature.
+ */
+
+include_once 'caltechlibrary_journals_view.features.inc';

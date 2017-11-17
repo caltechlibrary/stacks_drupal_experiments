@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Caltech Library Media feature.
+ */
+
+include_once 'caltechlibrary_media.features.inc';

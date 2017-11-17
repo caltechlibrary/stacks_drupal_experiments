@@ -1,0 +1,132 @@
+<?php
+/**
+ * @file
+ * Defines custom journal entity.
+ */
+
+/**
+ * Implements hook_entity_info().
+ */
+function caltechlibrary_journal_entity_info() {
+  $info['journal'] = array(
+    'label' => t('Journal'),
+    'entity class' => 'Entity',
+    'controller class' => 'EntityAPIController',
+    'base table' => 'caltechlibrary_journal',
+    'fieldable' => FALSE,
+    'entity keys' => array(
+      'id' => 'jid',
+    ),
+    'views controller class' => 'EntityDefaultViewsController',
+    'module' => 'caltechlibrary_journal',
+  );
+
+  return $info;
+}
+
+/**
+ * Implements hook_entity_property_info().
+ */
+function caltechlibrary_journal_entity_property_info() {
+  $info = array();
+
+  $info['journal']['properties']['jid'] = array(
+    'label' => t('Journal ID'),
+    'description' => t('The internal ID of the journal.'),
+    'type' => 'integer',
+    'schema field' => 'jid',
+  );
+
+  $info['journal']['properties']['unique_id'] = array(
+    'label' => t('Unique ID'),
+    'description' => t('The unique ID from the source data.'),
+    'type' => 'text',
+    'schema field' => 'unique_id',
+  );
+  $info['journal']['properties']['kbid'] = array(
+    'label' => t('KBID'),
+    'description' => t('The KBID supplied by EBSCO.'),
+    'type' => 'text',
+    'schema field' => 'kbid',
+  );
+  $info['journal']['properties']['title'] = array(
+    'label' => t('Title'),
+    'description' => t('The journal title.'),
+    'type' => 'text',
+    'schema field' => 'title',
+  );
+  $info['journal']['properties']['alt_title'] = array(
+    'label' => t('Alternate Titles'),
+    'description' => t('Alternate or previous titles for the journal.'),
+    'type' => 'text',
+    'schema field' => 'alt_title',
+  );
+  $info['journal']['properties']['platform'] = array(
+    'label' => t('Platform'),
+    'description' => t('The platform on which the journal is available.'),
+    'type' => 'text',
+    'schema field' => 'platform',
+  );
+  $info['journal']['properties']['package'] = array(
+    'label' => t('Package'),
+    'description' => t('The package through which the journal was purchased.'),
+    'type' => 'text',
+    'schema field' => 'package',
+  );
+  $info['journal']['properties']['url'] = array(
+    'label' => t('URL'),
+    'description' => t('The URL at which the journal can be accessed.'),
+    'type' => 'text',
+    'schema field' => 'url',
+  );
+  $info['journal']['properties']['publisher'] = array(
+    'label' => t('Publisher'),
+    'description' => t('The publisher of the journal.'),
+    'type' => 'text',
+    'schema field' => 'publisher',
+  );
+  $info['journal']['properties']['sn_print'] = array(
+    'label' => t('Print SN'),
+    'description' => t('ISSN or other serial number for the print edition.'),
+    'type' => 'text',
+    'schema field' => 'sn_print',
+  );
+  $info['journal']['properties']['sn_online'] = array(
+    'label' => t('Online SN'),
+    'description' => t('ISSN or other serial number for the online edition.'),
+    'type' => 'text',
+    'schema field' => 'sn_online',
+  );
+  $info['journal']['properties']['coverage_begin'] = array(
+    'label' => t('Coverage Begin'),
+    'description' => t('String representing the date coverage begins.'),
+    'type' => 'text',
+    'schema field' => 'coverage_begin',
+  );
+  $info['journal']['properties']['coverage_end'] = array(
+    'label' => t('Coverage End'),
+    'description' => t('String representing the date coverage ends.'),
+    'type' => 'text',
+    'schema field' => 'coverage_end',
+  );
+  $info['journal']['properties']['coverage_note'] = array(
+    'label' => t('Coverage Note'),
+    'description' => t('A note about the coverage dates.'),
+    'type' => 'text',
+    'schema field' => 'coverage_note',
+  );
+  $info['journal']['properties']['description'] = array(
+    'label' => t('Description'),
+    'description' => t('A description of the journal.'),
+    'type' => 'text',
+    'schema field' => 'description',
+  );
+  $info['journal']['properties']['keywords'] = array(
+    'label' => t('Keywords'),
+    'description' => t('Keywords for indexing purposes.'),
+    'type' => 'text',
+    'schema field' => 'keywords',
+  );
+
+  return $info;
+}
