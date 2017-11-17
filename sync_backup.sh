@@ -3,7 +3,7 @@
 
 drush bam-backup
 
-latest=`ls -t /var/www/stacks/sites/default/files/private/backup_migrate/manual/www.library.caltech.edu-* | head -1`
+latest=`ls -t /var/www/stacks/_www/sites/default/files/private/backup_migrate/manual/www.library.caltech.edu-* | head -1`
 # echo "latest backup: $latest"
 
 # find the first instance and then the "second" word (there is a leading space)
